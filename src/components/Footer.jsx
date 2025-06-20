@@ -1,11 +1,10 @@
-import React from 'react';
 
 const Footer = () => (
-  <div className="mt-24">
-    <p className="dark:text-gray-200 text-gray-700 text-center m-20">
-      © 2022 All rights reserved by Shoppy.com
+  <footer className="mt-24 border-t pt-6 pb-4 bg-white dark:bg-[#1f2937] shadow-sm">
+    <p className="text-center text-sm text-gray-600 dark:text-gray-400">
+      © {new Date().getFullYear()} <span className="font-semibold text-blue-600 dark:text-blue-400">Shoppy</span>. All rights reserved.
     </p>
-  </div>
+  </footer>
 );
 
 export default Footer;

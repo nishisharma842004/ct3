@@ -1,61 +1,65 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { SiShopware } from 'react-icons/si';
-import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { MdOutlineCancel } from 'react-icons/md';
+import { SiShopware } from 'react-icons/si';
+import { Link, NavLink } from 'react-router-dom';
 
-import { links } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
+import { links } from '../data/dummy';
 
 const Sidebar = () => {
   const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext();
 
-  const handleCloseSideBar = () => {
-    if (activeMenu !== undefined && screenSize <= 900) {
-      setActiveMenu(false);
-    }
+  const handleCloseSidebar = () => {
+    if (activeMenu && screenSize <= 900) setActiveMenu(false);
   };
 
-  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2';
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
+  const activeLink = `flex items-center gap-4 p-3 mx-2 my-1 rounded-lg text-white text-sm font-medium`;
+  const normalLink = `flex items-center gap-4 p-3 mx-2 my-1 rounded-lg text-sm text-gray-700 dark:text-gray-200 hover:bg-light-gray dark:hover:text-black`;
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+    <aside className="h-screen overflow-auto md:hover:overflow-auto md:overflow-hidden pb-6 px-2 transition-all duration-300">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
-            <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+          {/* Logo and Cancel Button */}
+          <div className="flex justify-between items-center mt-5">
+            <Link
+              to="/"
+              className="flex items-center gap-3 text-xl font-extrabold text-slate-900 dark:text-white ml-2"
+              onClick={handleCloseSidebar}
+            >
               <SiShopware /> <span>Shoppy</span>
             </Link>
-            <TooltipComponent content="Menu" position="BottomCenter">
+            <TooltipComponent content="Close Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => setActiveMenu(!activeMenu)}
+                onClick={() => setActiveMenu(false)}
+                className="md:hidden text-xl p-2 hover:bg-light-gray rounded-full"
                 style={{ color: currentColor }}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
               </button>
             </TooltipComponent>
           </div>
-          <div className="mt-10 ">
-            {links.map((item) => (
-              <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
-                  {item.title}
+
+          {/* Sidebar Links */}
+          <div className="mt-10">
+            {links.map((section) => (
+              <div key={section.title}>
+                <p className="text-gray-400 uppercase text-xs font-semibold px-4 mb-2">
+                  {section.title}
                 </p>
-                {item.links.map((link) => (
+                {section.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
-                    onClick={handleCloseSideBar}
+                    onClick={handleCloseSidebar}
                     style={({ isActive }) => ({
                       backgroundColor: isActive ? currentColor : '',
                     })}
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                   >
                     {link.icon}
-                    <span className="capitalize ">{link.name}</span>
+                    <span className="capitalize">{link.name}</span>
                   </NavLink>
                 ))}
               </div>
@@ -63,7 +67,7 @@ const Sidebar = () => {
           </div>
         </>
       )}
-    </div>
+    </aside>
   );
 };
 

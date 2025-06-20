@@ -1,12 +1,11 @@
-import React from 'react';
+import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { Button, LineChart, Pie, SparkLine, Stacked } from '../components';
 import { useStateContext } from '../contexts/ContextProvider';
+import { dropdownData, earningData, ecomPieChartData, medicalproBranding, recentTransactions, SparklineAreaData, weeklyStats } from '../data/dummy';
 import product9 from '../data/product9.jpg';
 
 const DropDown = ({ currentMode }) => (
