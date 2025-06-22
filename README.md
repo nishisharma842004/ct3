@@ -1,12 +1,54 @@
-# Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
-![Shoppy](https://i.ibb.co/W6g39w3/image.png)
+# 🛒 Cartify — React Admin Dashboard
 
-### [🌟 Become a top 1% Next.js developer in only one course](https://jsmastery.pro/next15)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
+![Cartify Dashboard Preview](https://i.ibb.co/W6g39w3/image.png)
 
-## Introduction of this
-This is a code repository for the corresponding video tutorial.
+> A fully customizable and responsive **Admin Dashboard** built with **React.js**, tailored for **e-commerce** use cases. Includes powerful features like cart management, charts, Kanban board, calendar, dark/light theme toggle, and more!
 
-If you want to get a finished, highly customizable Material UI version of a similar dashboard, check out [Flexy React Material Dashboard](https://www.wrappixel.com/templates/flexy-react-material-dashboard-admin/?ref=257&campaign=Flexy).
+## 🧰 Features
 
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
+- 🛍️ Cart Management UI
+- 🌗 Dark/Light Theme Toggle
+- 📈 Data-rich Charts & Graphs
+- 📅 Interactive Calendar
+- 📋 Kanban Task Board
+- 📊 Sales Analytics Dashboard
+- 🔧 Customizable Components
+- 📱 Fully Responsive Design
+
+---
+
+## 🛠 Tech Stack
+
+| Tech             | Use Case                         |
+|------------------|----------------------------------|
+| React.js         | Frontend Library                 |
+| Syncfusion       | Charts, Calendar, Kanban         |
+| Tailwind CSS     | Utility-first styling            |
+| React Router DOM | Navigation between pages         |
+| Context API      | Theme and global state handling  |
+
+---
+
+## 📁 Folder Structure
+/src
+├── components/ # Navbar, Sidebar, Theme Settings
+├── pages/ # Dashboard, Cart, Orders, Calendar, etc.
+├── context/ # Theme and app-wide context
+├── data/ # Mock data for tables, charts
+├── App.js # Main application logic
+└── index.js # Entry point
+
+## 🧾 Pages Included
+🏠 Dashboard Overview
+
+🛍️ Cart Summary
+
+📦 Orders Page
+
+📊 Line, Bar, Pie, Area, and Stacked Charts
+
+📋 Kanban Task Manager
+
+📅 Calendar Integration
+
+⚙️ User Profile & Settings
